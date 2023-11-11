@@ -15,12 +15,12 @@ class FileStorage:
 
     def all(self):
         """Get all objects."""
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """Create a new object."""
         class_name = str(obj.__class__.__name__)
-        self.__objects[f"{class_name}.{obj.id}"] = obj.to_dict()
+        FileStorage.__objects[f"{class_name}.{obj.id}"] = obj.to_dict()
 
     def save(self):
         """Save a new object to json."""
